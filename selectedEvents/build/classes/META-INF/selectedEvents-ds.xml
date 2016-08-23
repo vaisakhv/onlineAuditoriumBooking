@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+	<local-tx-datasource>
+		<jndi-name>selectedEventsJndi</jndi-name>
+		<connection-url>jdbc:oracle:thin:@localhost:1521:xe</connection-url>
+		<user-name>system</user-name>
+		<password>root</password>
+		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+		<min-pool-size>5</min-pool-size>
+		<max-pool-size>20</max-pool-size>
+		<idle-timeout-minutes>5</idle-timeout-minutes>
+	</local-tx-datasource>
+</datasources>

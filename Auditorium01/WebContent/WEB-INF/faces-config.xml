@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+    <managed-bean>
+	    <managed-bean-name>LoginBean</managed-bean-name>
+	    <managed-bean-class>com.ust_global.Login</managed-bean-class>
+	    <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+	    <from-view-id>/LoginUsers.jsp</from-view-id>
+	    <navigation-case>
+		    <from-outcome>SuccessLogin</from-outcome>
+		    <to-view-id>/SuccessLogin.jsp</to-view-id>
+	    </navigation-case>
+	     <navigation-case>
+		    <from-outcome>failureUsername</from-outcome>
+		    <to-view-id>/FailureUserName.jsp</to-view-id>
+	    </navigation-case>
+	     <navigation-case>
+		    <from-outcome>failurePassword</from-outcome>
+		    <to-view-id>/FailurePassword.jsp</to-view-id>
+	    </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    <from-view-id>/ForgetPassword.jsp</from-view-id>
+    <navigation-case>
+		    <from-outcome>passUpdated</from-outcome>
+		    <to-view-id>/PassUpdated.jsp</to-view-id>
+	    </navigation-case>
+	     <navigation-case>
+		    <from-outcome>forgetusernamefailed</from-outcome>
+		    <to-view-id>/ForgetUserName.jsp</to-view-id>
+	    </navigation-case>
+	     <navigation-case>
+		    <from-outcome>forgetpasswordfailed</from-outcome>
+		    <to-view-id>/ForgetPasswordFailed.jsp</to-view-id>
+	    </navigation-case>
+    </navigation-rule>
+    
+</faces-config>

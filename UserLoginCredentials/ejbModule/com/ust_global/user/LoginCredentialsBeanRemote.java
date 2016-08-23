@@ -4,8 +4,10 @@ import java.util.List;
 import javax.ejb.Remote;
 
 @Remote
-public interface LoginCredentialsBeanRemote {
-
+public interface LoginCredentialsBeanRemote 
+{
+	public void signUp(User user);
+	
 	//this can be done only if the user knows the username and the current password
 	public void deleteAccount(String userName,String passWord);
 	

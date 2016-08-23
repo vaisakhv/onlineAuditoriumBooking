@@ -1,21 +1,15 @@
 package com.ust_global.user;
 
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-public class LoginCredentialsClient {
-
-	/**
-	 * @param args
-	 * @throws NamingException 
-	 */
-	public static void main(String[] args) throws NamingException {
-		
-
+public class LoginCredentialsClient 
+{
+	public static void main(String[] args) throws NamingException 
+	{
 		Properties p=new Properties();
 		p.put(Context.PROVIDER_URL,"localhost:1099");
 		p.put(Context.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
@@ -24,16 +18,17 @@ public class LoginCredentialsClient {
 		
 		LoginCredentialsBeanRemote loginCredentials=(LoginCredentialsBeanRemote) ctx.lookup("LoginCredentialsBean/remote");
 		User user = new User();
-//		user.setUserName("hari");
-//		user.setPassWord("pass123");
+		
+		user.setUserName("hari");
+		user.setPassWord("pass123");
+//		loginCredentials.signUp(user);
 		List<User> allUserNames=loginCredentials.readAllUserNames();
 		for (User usr:allUserNames) 
 		{
-//			usr.setPassWord(null);
+			usr.setPassWord(null);
 			System.out.println(usr.getUserName()+" and "+usr.getPassWord());
 		}
+//		loginCredentials.deleteAccount("vaisakh","pass124" );
 		
-
 	}
-
 }
